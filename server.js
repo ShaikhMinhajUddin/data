@@ -25,6 +25,7 @@ mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
 
 // Inspection Schema
 const inspectionSchema = new mongoose.Schema({
+  customer: String,
   serialNo: Number,
   year: Number,
   month: String,
