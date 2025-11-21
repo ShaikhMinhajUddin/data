@@ -84,6 +84,18 @@ router.put("/:id", async (req, res) => {
   }
 });
 
+/* DELETE ALL inspections */
+router.delete("/deleteAll", async (req, res) => {
+  try {
+    await Inspection.deleteMany({});
+    res.status(200).json({ message: "All inspections deleted successfully!" });
+  } catch (err) {
+    console.error("Delete All error:", err);
+    res.status(500).json({ message: "Failed to delete all inspections." });
+  }
+});
+
+
 /* ✅ DELETE inspection by ID */
 router.delete("/:id", async (req, res) => {
   try {

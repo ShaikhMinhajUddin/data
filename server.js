@@ -155,6 +155,19 @@ app.put("/api/inspections/:id", async (req, res) => {
   }
 });
 
+// ✅ Delete ALL inspections
+app.delete("/api/inspections/deleteAll", async (req, res) => {
+  try {
+    await Inspection.deleteMany({});
+    res.status(200).json({ message: "All inspections deleted successfully!" });
+  } catch (err) {
+    console.error("Error deleting all inspections:", err);
+    res.status(500).json({ error: "Failed to delete all inspections" });
+  }
+});
+
+
+
 // ✅ Delete inspection by ID
 app.delete("/api/inspections/:id", async (req, res) => {
   try {
