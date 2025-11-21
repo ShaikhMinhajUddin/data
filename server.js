@@ -55,6 +55,10 @@ const inspectionSchema = new mongoose.Schema({
   actualMinor: Number,
   actualOql: Number,
 
+  lassar:Number,
+  patta:Number,
+  shadeOut:Number,
+
   pulledTerry: Number,
   rawEdge: Number,
   weaving: Number,

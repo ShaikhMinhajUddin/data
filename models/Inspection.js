@@ -1,14 +1,15 @@
 import mongoose from "mongoose";
 
 const inspectionSchema = new mongoose.Schema({
-  serialNo: Number,
+  customer: String,
+  serialNo: String,
   year: Number,
   month: String,
-  inspectionId: Number,
+  inspectionId: String,
   inspectionDate: Date,
   servicePerformed: String,
   inspectionType: String,
-  dpi: String,
+  dpi: Number,  // Number instead of String
   bvFinal: String,
   aktiSelf: String,
   inspectorName: String,
@@ -30,6 +31,11 @@ const inspectionSchema = new mongoose.Schema({
   actualMajor: Number,
   actualMinor: Number,
   actualOql: Number,
+
+  // Process Defects
+  lassar: Number,
+  patta: Number,
+  shadeOut: Number,
 
   // Major Defects
   pulledTerry: Number,

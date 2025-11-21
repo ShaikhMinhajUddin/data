@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js"
-  },
+  "dev": "nodemon index.js",
+  "start": "node index.js"
+},
+
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",

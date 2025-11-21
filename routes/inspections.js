@@ -42,22 +42,24 @@ router.post("/", async (req, res) => {
   }
 });
 
-/* ✅ POST bulk inspections */
-router.post("/bulk", async (req, res) => {
+
+/* ✅ POST imported inspections (from Excel/CSV) */
+router.post("/import", async (req, res) => {
   try {
-    const data = req.body; // array of inspection objects
+    const data = req.body;
 
     if (!Array.isArray(data) || data.length === 0) {
       return res.status(400).json({ message: "No data provided" });
     }
 
     await Inspection.insertMany(data);
-    res.status(200).json({ message: `Bulk data inserted successfully! (${data.length} records)` });
+    res.status(200).json({ message: `Imported ${data.length} records successfully!` });
   } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Failed to insert bulk data" });
+    console.error("Import error:", err);
+    res.status(500).json({ error: "Failed to import inspection data" });
   }
 });
+
 
 /* ✅ UPDATE inspection by ID */
 router.put("/:id", async (req, res) => {
