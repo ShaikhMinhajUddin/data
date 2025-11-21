@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const inspectionSchema = new mongoose.Schema({
-  customer: String,
+  Customer: String,
   serialNo: String,
   year: Number,
   month: String,
