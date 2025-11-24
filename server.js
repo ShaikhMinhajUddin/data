@@ -91,7 +91,7 @@ const inspectionSchema = new mongoose.Schema({
 const Inspection = mongoose.model("Inspection", inspectionSchema);
 
 // ==================== ROUTES ====================
-import inspectionRoutes from "./routes/Inspection.js";
+import inspectionRoutes from "./routes/inspections.js";
 app.use("/api/inspections", inspectionRoutes);
 
 
