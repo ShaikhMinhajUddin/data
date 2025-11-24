@@ -88,7 +88,7 @@ const inspectionSchema = new mongoose.Schema({
   stainMinor: Number
 }, { timestamps: true });
 
-const Inspection = mongoose.model("Inspection", inspectionSchema);
+const Inspection = mongoose.models.Inspection || mongoose.model("Inspection", inspectionSchema);
 
 // ==================== ROUTES ====================
 import inspectionRoutes from "./routes/inspections.js";
