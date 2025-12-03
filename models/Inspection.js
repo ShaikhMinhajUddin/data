@@ -62,6 +62,11 @@ const inspectionSchema = new mongoose.Schema({
   flyYarn: Number,
   dustMark: Number,
   stainMinor: Number,
+  item: {
+    type: String,
+    enum: ["40 Pack", "60 Pack", "18 Pack"],
+    required: false, // chahe to required true bhi kar sakte ho
+  }
 }, { timestamps: true });
 
 export default mongoose.model("Inspection", inspectionSchema);
