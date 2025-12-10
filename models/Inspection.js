@@ -18,6 +18,7 @@ const inspectionSchema = new mongoose.Schema({
     enum: ["60 Pack","24 Pack", "18 Pack"],
     required: false, // chahe to required true bhi kar sakte ho
   },
+  sampleSize: { type: Number, default: 0 },
   offeredQtyCtn: Number,
   offeredQtyPacks: Number,
   noOfInspection: Number,
