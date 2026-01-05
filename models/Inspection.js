@@ -15,7 +15,7 @@ const inspectionSchema = new mongoose.Schema({
   inspectorName: String,
   item: {
     type: String,
-    enum: ["60 Pack","24 Pack", "18 Pack", "Shop Towel"],
+    enum: ["60 Pack","24 Pack", "18 Pack", "36 Pack", "Shop Towel"],
     required: false, // chahe to required true bhi kar sakte ho
   },
   sampleSize: { type: Number, default: 0 },
